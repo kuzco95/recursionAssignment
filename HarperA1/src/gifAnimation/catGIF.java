@@ -44,25 +44,15 @@ public class catGIF extends JFrame implements ActionListener{
 	private boolean isRunning = true; //false;
 	private boolean isStopped = false;
 	private Integer cycleNum;
+	private Integer sizeX;
+	//private Integer sizeY;
 	
 	public catGIF() {
-		
-		String cycles = 
-	    		JOptionPane.showInputDialog("Greetings! Pick a number between 1 and 10");	
-		//error checking:
-		try{
-			cycleNum = Integer.valueOf(cycles);//stack overflow 
-			//http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java
-			if (cycleNum<= 1||cycleNum>=10){
-				System.out.println("You little rebel.");
-				cycleNum = 5;
-			}
-		}catch(NumberFormatException elitist){
-			System.out.println("How about 5.");
-			cycleNum = 5;
-		}//end try catch 
+		setNum();		//call set method
+		sizeMethod();	//call set size method
+		setSize(sizeX, 400);
 
-		setSize(575, 400);
+		
 		setLayout(new FlowLayout());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 		getContentPane().setBackground(Color.white);
@@ -93,7 +83,7 @@ public class catGIF extends JFrame implements ActionListener{
 		
 		//iconArray[0].getScaledInstance(300, 300, Image.SCALE_DEFAULT);
 		myJLabel = new JLabel(iconArray[0]);
-				
+		
 		add(myJLabel);
 		setLocationRelativeTo(null);
 		setVisible(true);
@@ -119,6 +109,47 @@ public class catGIF extends JFrame implements ActionListener{
 		
 		}//end for loop
 	}//end constructor
+	
+	protected void setNum(){		//set method
+		
+		String cycles = 
+	    		JOptionPane.showInputDialog("Greetings! Pick a number between 1 and 10");	
+		//error checking:
+		try{
+			cycleNum = Integer.valueOf(cycles);//stack overflow 
+			//http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java
+			if (cycleNum < 1||cycleNum > 10){
+				System.out.println("You little rebel.");
+				cycleNum = 5;
+			}
+		}catch(NumberFormatException elitist){
+			System.out.println("How about 5.");
+			cycleNum = 5;
+			
+			//sizeMethod();
+		}//end try catch 
+	}//end set method
+	
+	protected void sizeMethod(){
+		
+		
+		String xValue = 
+	    		JOptionPane.showInputDialog("Pick a number between 300 and 600");	
+		//error checking:
+		try{
+			sizeX = Integer.valueOf(xValue);//stack overflow 
+			//http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java
+			if (sizeX < 299||sizeX > 601){
+				System.out.println("You little rebel.");
+				sizeX = 300;
+			}
+		}catch(NumberFormatException elitist){
+			System.out.println("How about 300.");
+			sizeX = 300;
+		}//end try catch
+		
+	}//end second set method
+	
 //excerpt 1	
 	public void actionPerformed(ActionEvent event) {
 			//JOptionPane.showMessageDialog(CheapAnimation.this, "You pressed "+ event.getActionCommand());
