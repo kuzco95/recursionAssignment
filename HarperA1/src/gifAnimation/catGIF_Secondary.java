@@ -18,13 +18,11 @@ public class catGIF_Secondary extends catGIF {
 		final  int numberOfImages = 4;
 		
 		Interface newInt = new Interface();
-
-		int cycleNum = newInt.cycleNum;		//renames cycleNum as cycleNum
 		
-		protected void pickCyc(){
+		protected void setNum(){
 			
 			String cycles = 
-		    		JOptionPane.showInputDialog("Pick a number between 1 and 10");	
+		    		JOptionPane.showInputDialog("SecondPick a number between 1 and 10");	
 			//error checking:
 			try{
 				cycleNum = Integer.valueOf(cycles);//stack overflow 
@@ -43,7 +41,7 @@ public class catGIF_Secondary extends catGIF {
 		public catGIF_Secondary() {	//constructor
 			
 			
-			setSize(575, 400);
+			setSize(sizeX, 400);
 			setLayout(new FlowLayout());
 			setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 			getContentPane().setBackground(Color.white);
@@ -63,7 +61,7 @@ public class catGIF_Secondary extends catGIF {
 			add(myJLabel);
 			setLocationRelativeTo(null);
 			setVisible(true);
-			for(int j=0; j < 500 && !isStopped; j++){ //run 500 times
+			for(int j=0; j < cycleNum && !isStopped; j++){ //run x number of times
 			for(int i=0; i < numberOfImages; i++) {
 				try {
 					if(color == 0){

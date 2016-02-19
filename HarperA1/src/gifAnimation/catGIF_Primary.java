@@ -16,22 +16,21 @@ int color = 0;
 	
 	final int numberOfButtons = 3;
 	final  int numberOfImages = 4;
-//	private static final long serialVersionUID = 1L;
-//	protected JButton buttonArray[] = new JButton[numberOfButtons];
+	
 	protected Icon rediconArray[] = new Icon[numberOfImages];
 	protected Icon blueiconArray[] = new Icon[numberOfImages];
 	protected Icon yellowiconArray[] = new Icon[numberOfImages];
 
 	private JLabel myJLabel = new JLabel();
-	private boolean isRunning = true; //false;
-	private boolean isStopped = false;
 	
 	Interface newInt = new Interface();
 	
-	int cycleNum = newInt.cycleNum;		//renames cycleNum as cycleNum
-	protected void pickCyc(){
+	//int cycleNum = newInt.cycleNum;		//renames cycleNum as cycleNum
+	
+	
+	protected void setNum(){
 		String cycles = 
-	    		JOptionPane.showInputDialog("Pick a number between 1 and 10");	
+	    		JOptionPane.showInputDialog("Primary: Pick a number between 1 and 10");	
 		//error checking:
 		try{
 			cycleNum = Integer.valueOf(cycles);//stack overflow 
@@ -47,7 +46,7 @@ int color = 0;
 		
 	}//end pickCyc method	
 	
-	public catGIF_Primary() {		//constuctor 
+	public void catGIFPrimary() {		
 		setSize(575, 400);
 		setLayout(new FlowLayout());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
@@ -62,7 +61,6 @@ int color = 0;
 			buttonArray[i].addActionListener(this);
 		} //end for loop
 		
-		//iconArray[0].getScaledInstance(300, 300, Image.SCALE_DEFAULT);
 		myJLabel = new JLabel(iconArray[0]);
 				
 		add(myJLabel);
@@ -112,7 +110,6 @@ int color = 0;
 	
 //excerpt 1	
 	public void actionPerformed(ActionEvent event) {
-			//JOptionPane.showMessageDialog(CheapAnimation.this, "You pressed "+ event.getActionCommand());
 			if (event.getSource() == buttonArray[0]) {
 				//isRunning = false;
 				//catBlue(); 
@@ -125,15 +122,10 @@ int color = 0;
 				//buttonArray[0].setText("Resume");
 			} else if (event.getSource() == buttonArray[2]) {
 //				isStopped = true;
-//				buttonArray[0].setText("Bye");
-//				buttonArray[1].setText("Bye");
 				color = 2;
 			}
 					
 	}//end action listener method
 
-//public static void main( String args[]) throws InterruptedException{
-//	catGIF_Primary myCheapAnimation = new catGIF_Primary();
-//}//end main
 
-}
+}//end class

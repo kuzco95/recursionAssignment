@@ -38,10 +38,11 @@ public class catGIF extends JFrame implements ActionListener{
 	protected Integer sizeX;
 	
 	public catGIF() {
+		
+		
 		setNum();		//call set method
 		sizeMethod();	//call set size method
 		setSize(sizeX, 400);
-
 		
 		setLayout(new FlowLayout());
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
@@ -106,7 +107,7 @@ public class catGIF extends JFrame implements ActionListener{
 	protected void setNum(){		//set method
 		
 		String cycles = 
-	    		JOptionPane.showInputDialog("Greetings! Pick a number between 1 and 20.");	
+	    		JOptionPane.showInputDialog("Pick a number between 1 and 20.");	
 		//error checking:
 		try{
 			cycleNum = Integer.valueOf(cycles);//stack overflow 
@@ -125,14 +126,13 @@ public class catGIF extends JFrame implements ActionListener{
 	
 	protected void sizeMethod(){
 		
-		
 		String xValue = 
 	    		JOptionPane.showInputDialog("Pick a number between 300 and 600.");	
 		//error checking:
 		try{
 			sizeX = Integer.valueOf(xValue);//stack overflow 
 			//http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java
-			if (sizeX < 299||sizeX > 601){
+			if (sizeX < 300||sizeX > 600){
 				System.out.println("Nope. Let's do 300");
 				sizeX = 300;
 			}
@@ -142,32 +142,28 @@ public class catGIF extends JFrame implements ActionListener{
 		}//end try catch
 		
 	}//end second set method
-	
-//excerpt 1	
+
 	public void actionPerformed(ActionEvent event) {
 			//JOptionPane.showMessageDialog(CheapAnimation.this, "You pressed "+ event.getActionCommand());
 			if (event.getSource() == buttonArray[0]) {
-				//isRunning = false;
-				//catBlue(); 
+			 
 				color = 1;
 			} else if (event.getSource() == buttonArray[1]) {
 				
 				color = 0;
-				//catGIF_Secondary catTwo = new catGIF_Secondary();
 				System.out.println("Nope. Let's do 300.");
-				//buttonArray[0].setText("Resume");
+//				catGIF_Secondary catTwo = new catGIF_Secondary();
+//						catTwo.setNum();
 			} else if (event.getSource() == buttonArray[2]) {
 				color = 2;
-			}
-			
-			
+			}			
 
-			//catTwo.pickCyc();
 	}//end action listener method
 	
     public static void main( String args[]) throws InterruptedException{
-    	
-    	catGIF myCheapAnimation = new catGIF();
+//		Interface newInterface = new Interface();
+//		newInterface.middleMan();		//call interface method   	
+    	catGIF myCheapAnimation = new catGIF();		//renames constructor and goes to it
     }//end main
 }//end class
 

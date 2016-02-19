@@ -32,29 +32,33 @@ public class Interface {
     	if(colorType == null){		//from Cordell
     		System.exit(0);
     	}
-    	
-    	
+	
     	if(colorType.equals("A")){
-    		catGIF_Primary catPrime = new catGIF_Primary();			//primary color class
-    		catPrime.pickCyc(); //catPrime(); 
+    		System.out.println("A!");
+    		catGIF_Primary catPrime = new catGIF_Primary();			//primary color class renamed as catPrime
+    		catPrime.setNum(); //catPrime(); 
+
     	}
-    	else{
-    	if(colorType.equals("B")){
+    	else if(colorType.equals("B")){
     		catGIF_Secondary catTwo = new catGIF_Secondary();		//secondary color class
-    		catTwo.pickCyc();
+    		catTwo.setNum();
     	}
-    	else{
-    	if(colorType.equals("C")){
+    	else if(colorType.equals("C")){
     		catGIF defCat = new catGIF();							//superclass
+    		System.out.println("Default it is!");
+    		//defCat.catGIF();
+
     	}
     	else{
+    		catGIF defCat = new catGIF();							
     		System.out.println("Default it is!");
     		}
-    		}
-    		}//end else  	
+    		
+    		//end else  	
     	
     }//end middleMan
     protected Interface(){
+    	
     	middleMan(); 
     	
     }//end constructor
