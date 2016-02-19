@@ -16,8 +16,8 @@ int color = 0;
 	
 	final int numberOfButtons = 3;
 	final  int numberOfImages = 4;
-	private static final long serialVersionUID = 1L;
-	protected JButton buttonArray[] = new JButton[numberOfButtons];
+//	private static final long serialVersionUID = 1L;
+//	protected JButton buttonArray[] = new JButton[numberOfButtons];
 	protected Icon rediconArray[] = new Icon[numberOfImages];
 	protected Icon blueiconArray[] = new Icon[numberOfImages];
 	protected Icon yellowiconArray[] = new Icon[numberOfImages];
@@ -60,25 +60,10 @@ int color = 0;
 		for (int i=0; i < numberOfButtons; i++) {
 			add(buttonArray[i]);  // add button to JFrame
 			buttonArray[i].addActionListener(this);
-		}
-
-		rediconArray[0] = new ImageIcon("GIFcat1RED.gif");
-		rediconArray[1] = new ImageIcon("GIFcat2RED.gif");
-		rediconArray[2] = new ImageIcon("GIFcat3RED.gif");
-		rediconArray[3] = new ImageIcon("GIFcat4RED.gif");
-		
-		blueiconArray[0] = new ImageIcon("GIFcat1BLUE.gif");
-		blueiconArray[1] = new ImageIcon("GIFcat2BLUE.gif");
-		blueiconArray[2] = new ImageIcon("GIFcat3BLUE.gif");
-		blueiconArray[3] = new ImageIcon("GIFcat4BLUE.gif");
-		
-		yellowiconArray[0] = new ImageIcon("GIFcat1YEL.gif");
-		yellowiconArray[1] = new ImageIcon("GIFcat2YEL.gif");
-		yellowiconArray[2] = new ImageIcon("GIFcat3YEL.gif");
-		yellowiconArray[3] = new ImageIcon("GIFcat4YEL.gif");
+		} //end for loop
 		
 		//iconArray[0].getScaledInstance(300, 300, Image.SCALE_DEFAULT);
-		myJLabel = new JLabel(rediconArray[0]);
+		myJLabel = new JLabel(iconArray[0]);
 				
 		add(myJLabel);
 		setLocationRelativeTo(null);
@@ -87,13 +72,8 @@ int color = 0;
 		for(int i=0; i < numberOfImages; i++) {
 			try {
 				if(color == 0){
-				myJLabel.setIcon(rediconArray[i]);
-				}else if(color == 1){
-					myJLabel.setIcon(blueiconArray[i]);
-				}
-				else{
-					myJLabel.setIcon(yellowiconArray[i]);
-				}
+				myJLabel.setIcon(iconArray[i]);
+				}				
 				Thread.sleep(175);
 				while (!isRunning){
 					Thread.sleep(175);
@@ -105,13 +85,40 @@ int color = 0;
 		
 		}//end for loop
 	}//end constructor
+	
+	protected void redCat(){
+		iconArray[0] = new ImageIcon("GIFcatRED1.gif");
+		iconArray[1] = new ImageIcon("GIFcatRED2.gif");
+		iconArray[2] = new ImageIcon("GIFcatRED3.gif");
+		iconArray[3] = new ImageIcon("GIFcatRED4.gif");
+		
+	}//end redCat
+	
+	protected void blueCat(){
+		iconArray[0] = new ImageIcon("GIFcatBLUE1.gif");
+		iconArray[1] = new ImageIcon("GIFcatBLUE2.gif");
+		iconArray[2] = new ImageIcon("GIFcatBLUE3.gif");
+		iconArray[3] = new ImageIcon("GIFcatBLUE4.gif");
+		
+	}//end blueCat
+	
+	protected void yellowCat(){
+		iconArray[0] = new ImageIcon("GIFcatYEL1.gif");
+		iconArray[1] = new ImageIcon("GIFcatYEL2.gif");
+		iconArray[2] = new ImageIcon("GIFcatYEL3.gif");
+		iconArray[3] = new ImageIcon("GIFcatYEL4.gif");
+		
+	}//end redCat
+	
 //excerpt 1	
 	public void actionPerformed(ActionEvent event) {
 			//JOptionPane.showMessageDialog(CheapAnimation.this, "You pressed "+ event.getActionCommand());
 			if (event.getSource() == buttonArray[0]) {
 				//isRunning = false;
 				//catBlue(); 
-				color = 1;
+				//color = 1;
+				blueCat();
+				
 			} else if (event.getSource() == buttonArray[1]) {
 				//isRunning = false;
 				color = 0;

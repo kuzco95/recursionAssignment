@@ -16,21 +16,13 @@ public class catGIF_Secondary extends catGIF {
 		
 		final int numberOfButtons = 3;
 		final  int numberOfImages = 4;
-		private static final long serialVersionUID = 1L;
-		private JButton buttonArray[] = new JButton[numberOfButtons];
-		private Icon iconArray[] = new Icon[numberOfImages];
-		private Icon blueiconArray[] = new Icon[numberOfImages];
-		private Icon pinkiconArray[] = new Icon[numberOfImages];
-
-		private JLabel myJLabel = new JLabel();
-		private boolean isRunning = true; //false;
-		private boolean isStopped = false;
 		
 		Interface newInt = new Interface();
-		
+
 		int cycleNum = newInt.cycleNum;		//renames cycleNum as cycleNum
 		
 		protected void pickCyc(){
+			
 			String cycles = 
 		    		JOptionPane.showInputDialog("Pick a number between 1 and 10");	
 			//error checking:
@@ -63,22 +55,7 @@ public class catGIF_Secondary extends catGIF {
 			for (int i=0; i < numberOfButtons; i++) {
 				add(buttonArray[i]);  // add button to JFrame
 				buttonArray[i].addActionListener(this);
-			}
-
-			iconArray[0] = new ImageIcon("GIFcat1.gif");
-			iconArray[1] = new ImageIcon("GIFcat2.gif");
-			iconArray[2] = new ImageIcon("GIFcat3.gif");
-			iconArray[3] = new ImageIcon("GIFcat4.gif");
-			
-			blueiconArray[0] = new ImageIcon("GIFcat1BLUE.gif");
-			blueiconArray[1] = new ImageIcon("GIFcat2BLUE.gif");
-			blueiconArray[2] = new ImageIcon("GIFcat3BLUE.gif");
-			blueiconArray[3] = new ImageIcon("GIFcat4BLUE.gif");
-			
-			pinkiconArray[0] = new ImageIcon("GIFcat1PINK.gif");
-			pinkiconArray[1] = new ImageIcon("GIFcat2PINK.gif");
-			pinkiconArray[2] = new ImageIcon("GIFcat3PINK.gif");
-			pinkiconArray[3] = new ImageIcon("GIFcat4PINK.gif");
+			} //end for loop
 			
 			//iconArray[0].getScaledInstance(300, 300, Image.SCALE_DEFAULT);
 			myJLabel = new JLabel(iconArray[0]);
@@ -91,11 +68,6 @@ public class catGIF_Secondary extends catGIF {
 				try {
 					if(color == 0){
 					myJLabel.setIcon(iconArray[i]);
-					}else if(color == 1){
-						myJLabel.setIcon(blueiconArray[i]);
-					}
-					else{
-						myJLabel.setIcon(pinkiconArray[i]);
 					}
 					Thread.sleep(175);
 					while (!isRunning){
@@ -108,6 +80,31 @@ public class catGIF_Secondary extends catGIF {
 			
 			}//end for loop
 		}//end constructor
+		
+		protected void purpleCat(){
+			iconArray[0] = new ImageIcon("GIFcatRED1.gif");
+			iconArray[1] = new ImageIcon("GIFcatRED2.gif");
+			iconArray[2] = new ImageIcon("GIFcatRED3.gif");
+			iconArray[3] = new ImageIcon("GIFcatRED4.gif");
+			
+		}//end redCat
+		
+		protected void orangeCat(){
+			iconArray[0] = new ImageIcon("GIFcatRED1.gif");
+			iconArray[1] = new ImageIcon("GIFcatRED2.gif");
+			iconArray[2] = new ImageIcon("GIFcatRED3.gif");
+			iconArray[3] = new ImageIcon("GIFcatRED4.gif");
+			
+		}//end blueCat
+		
+		protected void greenCat(){
+			iconArray[0] = new ImageIcon("GIFcatRED1.gif");
+			iconArray[1] = new ImageIcon("GIFcatRED2.gif");
+			iconArray[2] = new ImageIcon("GIFcatRED3.gif");
+			iconArray[3] = new ImageIcon("GIFcatRED4.gif");
+			
+		}//end redCat
+		
 	//excerpt 1	
 		public void actionPerformed(ActionEvent event) {
 				//JOptionPane.showMessageDialog(CheapAnimation.this, "You pressed "+ event.getActionCommand());

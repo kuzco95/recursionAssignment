@@ -21,31 +21,21 @@ import java.util.*;
 //help from Cordell
 public class catGIF extends JFrame implements ActionListener{
 	
-//	String cycles = 
-//    		JOptionPane.showInputDialog("Greetings! Pick a number between 1 and 10");
-//	Integer cycleNum = Integer.valueOf(cycles);	//stack overflow 
-//	//http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java
-//	try{
-//		Integer cycleNum = Integer.valueOf(cycles);
-//	}catch()
-
-	
 	int color = 0;
 	
 	final int numberOfButtons = 3;
 	final  int numberOfImages = 4;
 	private static final long serialVersionUID = 1L;
-	private JButton buttonArray[] = new JButton[numberOfButtons];
-	private Icon iconArray[] = new Icon[numberOfImages];
-	private Icon blueiconArray[] = new Icon[numberOfImages];
-	private Icon pinkiconArray[] = new Icon[numberOfImages];
+	protected JButton buttonArray[] = new JButton[numberOfButtons];
+	protected Icon iconArray[] = new Icon[numberOfImages];
+	protected Icon blueiconArray[] = new Icon[numberOfImages];
+	protected Icon pinkiconArray[] = new Icon[numberOfImages];
 
-	private JLabel myJLabel = new JLabel();
-	private boolean isRunning = true; //false;
-	private boolean isStopped = false;
-	private Integer cycleNum;
-	private Integer sizeX;
-	//private Integer sizeY;
+	protected JLabel myJLabel = new JLabel();
+	protected boolean isRunning = true; //false;
+	protected boolean isStopped = false;
+	protected Integer cycleNum;
+	protected Integer sizeX;
 	
 	public catGIF() {
 		setNum();		//call set method
@@ -92,35 +82,38 @@ public class catGIF extends JFrame implements ActionListener{
 			try {
 				if(color == 0){
 				myJLabel.setIcon(iconArray[i]);
+
 				}else if(color == 1){
 					myJLabel.setIcon(blueiconArray[i]);
 				}
 				else{
 					myJLabel.setIcon(pinkiconArray[i]);
 				}
-				Thread.sleep(175);
+				Thread.sleep(165);
 				while (!isRunning){
-					Thread.sleep(175);
+					Thread.sleep(165);
 				}
 	    	} catch (InterruptedException e) {
 	    		e.printStackTrace();
 	    	}	
 		}
-		
+
 		}//end for loop
+		//System.out.println("Nope. Let's do 300.");
+
 	}//end constructor
 	
 	protected void setNum(){		//set method
 		
 		String cycles = 
-	    		JOptionPane.showInputDialog("Greetings! Pick a number between 1 and 10");	
+	    		JOptionPane.showInputDialog("Greetings! Pick a number between 1 and 20.");	
 		//error checking:
 		try{
 			cycleNum = Integer.valueOf(cycles);//stack overflow 
 			//http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java
-			if (cycleNum < 1||cycleNum > 10){
+			if (cycleNum < 1||cycleNum > 20){
 				System.out.println("You little rebel.");
-				cycleNum = 5;
+				cycleNum = 7;
 			}
 		}catch(NumberFormatException elitist){
 			System.out.println("How about 5.");
@@ -134,13 +127,13 @@ public class catGIF extends JFrame implements ActionListener{
 		
 		
 		String xValue = 
-	    		JOptionPane.showInputDialog("Pick a number between 300 and 600");	
+	    		JOptionPane.showInputDialog("Pick a number between 300 and 600.");	
 		//error checking:
 		try{
 			sizeX = Integer.valueOf(xValue);//stack overflow 
 			//http://stackoverflow.com/questions/5585779/converting-string-to-int-in-java
 			if (sizeX < 299||sizeX > 601){
-				System.out.println("You little rebel.");
+				System.out.println("Nope. Let's do 300");
 				sizeX = 300;
 			}
 		}catch(NumberFormatException elitist){
@@ -158,24 +151,25 @@ public class catGIF extends JFrame implements ActionListener{
 				//catBlue(); 
 				color = 1;
 			} else if (event.getSource() == buttonArray[1]) {
-				//isRunning = false;
+				
 				color = 0;
+				//catGIF_Secondary catTwo = new catGIF_Secondary();
+				System.out.println("Nope. Let's do 300.");
 				//buttonArray[0].setText("Resume");
 			} else if (event.getSource() == buttonArray[2]) {
-//				isStopped = true;
-//				buttonArray[0].setText("Bye");
-//				buttonArray[1].setText("Bye");
 				color = 2;
 			}
-					
+			
+			
+
+			//catTwo.pickCyc();
 	}//end action listener method
 	
     public static void main( String args[]) throws InterruptedException{
+    	
     	catGIF myCheapAnimation = new catGIF();
     }//end main
 }//end class
-
-
 
 //package gifAnimation;
 //
@@ -222,7 +216,6 @@ public class catGIF extends JFrame implements ActionListener{
 //	protected JLabel myJLabel = new JLabel();
 //	protected boolean isRunning = true; //false;
 //	protected boolean isStopped = false;
-//
 //	
 //	public catGIF classArray[] = new catGIF[3];
 //	//classArray[1] = catGIF_Primary
@@ -232,24 +225,20 @@ public class catGIF extends JFrame implements ActionListener{
 ////		classArray[0] = new catGIF();
 ////		classArray[1] = new catGIF_Primary();
 ////		classArray[2] = new catGIF_Secondary();
-//		
-////		 Interface newInt = new Interface();
-////		
-////		int x = newInt.cycleNum;
+//	
+//		 Interface newInt = new Interface();
+//		int x = newInt.cycleNum;
 //
 //		setSize(575, 400);
 //		setLayout(new FlowLayout());
 //		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
 //		getContentPane().setBackground(Color.white);
-//				
-////		buttonArray[0] = new JButton("Blue");			
-////		buttonArray[1] = new JButton("Default");			
-////		buttonArray[2] = new JButton("Pink");			
+//							
 //
-////		for (int i=0; i < numberOfButtons; i++) { //goes through the button array
-////			add(buttonArray[i]);  				// add button to JFrame
-////			buttonArray[i].addActionListener(this);
-////		}
+//		for (int i=0; i < numberOfButtons; i++) { //goes through the button array
+//			add(buttonArray[i]);  				// add button to JFrame
+//			buttonArray[i].addActionListener(this);
+//		}
 //
 //		iconArray[0] = new ImageIcon("GIFcat1.gif");
 //		iconArray[1] = new ImageIcon("GIFcat2.gif");
@@ -265,62 +254,54 @@ public class catGIF extends JFrame implements ActionListener{
 ////		pinkiconArray[1] = new ImageIcon("GIFcat2PINK.gif");
 ////		pinkiconArray[2] = new ImageIcon("GIFcat3PINK.gif");
 ////		pinkiconArray[3] = new ImageIcon("GIFcat4PINK.gif");
-//		
+////		
 //		//iconArray[0].getScaledInstance(300, 300, Image.SCALE_DEFAULT);
 //		myJLabel = new JLabel(iconArray[0]);
 //				
 //		add(myJLabel);
-//		setLocationRelativeTo(null);
+//		setLocationRelativeTo(null);		//centers the JFrame
 //		setVisible(true);
 //		int cycleNum = 5;
-//		for(int j=0; j < cycleNum && !isStopped; j++){ //run 500 times
+//		for(int j=0; j < cycleNum && !isStopped; j++){ 
 //		for(int i=0; i < numberOfImages; i++) {
-////			try {
-////				if(color == 0){
-////				myJLabel.setIcon(iconArray[i]);
-////				}else if(color == 1){
-////					myJLabel.setIcon(blueiconArray[i]);
-////				}
-////				else{
-////					myJLabel.setIcon(pinkiconArray[i]);
-////				}
-////				Thread.sleep(175);
-////				while (!isRunning){
-////					Thread.sleep(175);
-////				}
-////	    	} catch (InterruptedException e) {
-////	    		e.printStackTrace();
-////	    	}	
+//			try {
+//				if(color == 0){
+//				myJLabel.setIcon(iconArray[i]);
+//				}				
+//				Thread.sleep(175);
+//				while (!isRunning){
+//					Thread.sleep(175);
+//				}
+//	    	} catch (InterruptedException e) {
+//	    		e.printStackTrace();
+//	    	}	
 //		}
 //		
 //		}//end for loop
 //	}//end constructor
 //
 //	public void actionPerformed(ActionEvent event) {
-////			//JOptionPane.showMessageDialog(CheapAnimation.this, "You pressed "+ event.getActionCommand());
-////			if (event.getSource() == buttonArray[0]) {
-////				//isRunning = false;
-////				//catBlue(); 
-////				color = 1;
-////			} else if (event.getSource() == buttonArray[1]) {
-////				//isRunning = false;
-////				color = 0;
-////				//buttonArray[0].setText("Resume");
-////			} else if (event.getSource() == buttonArray[2]) {
-//////				isStopped = true;
-//////				buttonArray[0].setText("Bye");
-//////				buttonArray[1].setText("Bye");
-////				color = 2;
-////			}
+//			if (event.getSource() == buttonArray[0]) {
+//				//isRunning = false;
+//				//catBlue(); 
+//				color = 1;
+//			} else if (event.getSource() == buttonArray[1]) {
+//				//isRunning = false;
+//				color = 0;
+//			} else if (event.getSource() == buttonArray[2]) {
+//				isStopped = true;
+//				color = 2;
+//			}
 //					
 //	}//end action listener method
 //	
 //    public static void main( String args[]) throws InterruptedException{
 //    	catGIF myCheapAnimation = new catGIF();
-//Interface newInt = new Interface();
+//    	Interface newInt = new Interface();
 //		
 //		int x = newInt.cycleNum;
 //    	//Interface.middleMan();
 //    	
 //    }//end main
 //}//end class
+
