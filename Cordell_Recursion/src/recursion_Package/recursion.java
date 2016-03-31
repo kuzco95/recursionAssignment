@@ -5,16 +5,17 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 public class recursion {
-		   int fact(int n) 
-		   {
-		          int result;
+		   
+	int fact(int n) 
+	{
+	int result;
 
-		     if (n == 1) return 1;
+	if (n == 1) return 1;
 
-		     result = fact (n-1)*n;
+	result = fact (n-1)*n;
 
-		     return result;
-		   }
+	return result;
+	}
 		   
 //new method rTest		     
 		   public void rTest (){
@@ -68,6 +69,12 @@ public class recursion {
 		          
 		    System.out.println("Factorial of " + urResult + " is " + f.urFact(urResult)); //asks for urResult from urFact
 		    
+		    try{Thread.sleep(1250);}							
+			 catch(Exception e){};
+		    System.out.println("Let's do something else...");
+		    
+		    try{Thread.sleep(800);}							
+			 catch(Exception e){};
 		    reversed();
 		     }//end method
 		     		     
@@ -90,7 +97,15 @@ public class recursion {
 		    	 JOptionPane.showInputDialog("Say something");   
 				 Other(str);
 				 
-		    	 System.out.println("\nHere you go: " + Other(str));  
+		    	 System.out.println("\nHere you go: \n" + Other(str)); 
+		    	 
+		    	 try{Thread.sleep(2000);}							
+				 catch(Exception e){};
+		    	 
+//		    	 System.out.println("Well, that was fun. Goodbye.");
+				 Rec_Part3 newRec = new Rec_Part3();
+				 newRec.newMaine();
+
 		     }
 //new method		     
 		     protected String Other(String str)	//from stackoverflow 
@@ -105,9 +120,10 @@ public class recursion {
 
 			        return reversed;
 			        
-//		    	 System.out.println("goodbye.");
 //		         System.exit(0);						//close program				        	
 		     }// end other
+		     
+		     
 			
 		} //end class
 
