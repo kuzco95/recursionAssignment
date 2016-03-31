@@ -4,26 +4,23 @@ package recursion_Package;
 //takes us to non-static class called recursion
 
 public class recursionDriver {
-	 protected void rTest(){
-//		 System.out.println("hi");
+//	 protected static int rTest(int a){
 //		 rTest();
-		
-		 int x = 2;
-		 x++;
-		 int a = x + 1;
-		
-		 System.out.println("hi " + a);
-		 rTest();
-	    }
-    public static void main( String args[]) throws InterruptedException{
-    //System.out.println("hi"); 
-
+//
+//		 a = a + 1;
+//		
+//		 System.out.println(a);
+//		 if(a <= 10){
+//			 return a = 2;
+//		 }
+//			return rTest(a);
+//		 
+//	    }
+    public static void main(String args[]) throws InterruptedException{
     recursion NewRec = new recursion();
     NewRec.rTest();
     
-//    	rTest newT = new rTest(); //does not work
+    	//rTest(0); //does not work
 //    	newT();
-    } //end main
-  
-   
+    } //end main 
 } //end class
