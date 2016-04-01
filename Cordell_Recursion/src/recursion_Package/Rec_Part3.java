@@ -46,8 +46,6 @@ public class Rec_Part3 extends Canvas{
 	  }
 
 	  public void drawFractalTree(Graphics g, int x1, int y1, double angle, int depth) {
-		  try{Thread.sleep(1);}							
-			 catch(Exception e){};
 			 
 		  if (depth == 0) {
 	    } else {
@@ -60,20 +58,21 @@ public class Rec_Part3 extends Canvas{
 	      g2d.setStroke(new BasicStroke(0.1f * depth));
 	      g2d.drawLine(x1, y1, x2, y2);	//starting line
 	      
-	      int j = 5;
-//	      for(j = 5; j >= depth; j--){
-//	      try{Thread.sleep(1);}							
-//			 catch(Exception e){};
-//	      }else{System.exit(0);}
-	      
+	      try{Thread.sleep(1);}							
+			 catch(Exception e){};
+			 
 	      drawFractalTree(g, x2, y2, angle + 20, depth - 1); //right side angle; default: +30
 	      
-	      try{Thread.sleep(j);}							
+	      try{Thread.sleep(1);}							
 			 catch(Exception e){};
 			 
 	      drawFractalTree(g, x2, y2, angle - 20, depth - 1); //left side angle; default: -30
 	      
+	      try{Thread.sleep(1);}							
+			 catch(Exception e){};
+	      
 	    }
+		  
 //	      try{Thread.sleep(1);}							
 //			 catch(Exception e){};
 
