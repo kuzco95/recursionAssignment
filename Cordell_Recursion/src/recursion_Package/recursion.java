@@ -23,16 +23,16 @@ public class recursion {
 		 recursion f = new recursion();
 
 		 System.out.println("Factorial of 3 is " + f.fact(3)); //calls method fact to perform operation 3!		          
-		 try{Thread.sleep(1000);}							  //1 s. time delay					
-		 catch(Exception e){};
+//		 try{Thread.sleep(1000);}							  //1 s. time delay					
+//		 catch(Exception e){};
 
 		 System.out.println("Factorial of 4 is " + f.fact(4));	         
-		 try{Thread.sleep(1000);}							
-		 catch(Exception e){};
+//		 try{Thread.sleep(1000);}							
+//		 catch(Exception e){};
 
 		 System.out.println("Factorial of 5 is " + f.fact(5));		          
-		 try{Thread.sleep(500);}							
-		 catch(Exception e){};
+//		 try{Thread.sleep(500);}							
+//		 catch(Exception e){};
 		          
 		  int urResult = 0;
 		  String input = "";
@@ -69,12 +69,12 @@ public class recursion {
 		          
 		    System.out.println("Factorial of " + urResult + " is " + f.urFact(urResult)); //asks for urResult from urFact
 		    
-		    try{Thread.sleep(1250);}							
-			 catch(Exception e){};
+//		    try{Thread.sleep(1250);}							
+//			 catch(Exception e){};
 		    System.out.println("Let's do something else...");
 		    
-		    try{Thread.sleep(800);}							
-			 catch(Exception e){};
+//		    try{Thread.sleep(800);}							
+//			 catch(Exception e){};
 		    reversed();
 		     }//end method
 		     		     
@@ -99,12 +99,12 @@ public class recursion {
 				 
 		    	 System.out.println("\nHere you go: \n" + Other(str)); 
 		    	 
-		    	 try{Thread.sleep(2000);}							
-				 catch(Exception e){};
+//		    	 try{Thread.sleep(2000);}							
+//				 catch(Exception e){};
 		    	 
 //		    	 System.out.println("Well, that was fun. Goodbye.");
-				 Rec_Part3 newRec = new Rec_Part3();
-				 newRec.newMaine();
+//				 Rec_Part3 newRec = new Rec_Part3();
+//				 newRec.newMaine();
 
 		     }
 //new method		     

@@ -17,8 +17,10 @@ public class recursionDriver {
 //		 
 //	    }
     public static void main(String args[]) throws InterruptedException{
-    recursion NewRec = new recursion();
-    NewRec.rTest();
+//    recursion NewRec = new recursion();
+//    NewRec.rTest();
+    	Rec_Part3 newRec = new Rec_Part3();
+    	newRec.newMaine();
     
     	//rTest(0); //does not work
 //    	newT();
